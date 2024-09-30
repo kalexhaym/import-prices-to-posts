@@ -21,6 +21,9 @@ define('IPRICES_STATUS_PENDING_UPDATE', 2);
 add_action('admin_enqueue_scripts', 'iprices_enqueue_admin_styles');
 add_action('admin_menu', 'iprices_menu_option');
 
+/**
+ * @return void
+ */
 function iprices_enqueue_admin_styles(): void
 {
     wp_enqueue_style('iprices-styles', plugin_dir_url( __FILE__ ) . 'css/styles.css', false, IPRICES_VERSION);
