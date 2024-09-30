@@ -1,0 +1,19 @@
+{
+    "name": "kalexhaym/import-rates",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Kalexhaym\\ImportRates\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Aleksei Kovalenko",
+            "email": "kalexhaym@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-zip": "*",
+        "phpoffice/phpspreadsheet": "^1.25"
+    }
+}

@@ -1,0 +1,25 @@
+#iprices_page hr {
+    margin: 20px 0;
+}
+#iprices_page .iprices-not-found {
+    background-color: rgba(243, 113, 113, 0.3) !important;
+}
+#iprices_page .iprices-no-changes {
+    background-color: rgba(244, 221, 129, 0.3) !important;
+}
+#iprices_page .iprices-pending-update {
+    background-color: rgba(29, 181, 95, 0.3) !important;
+}
+#iprices_page .iprices-update-buttons {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+#iprices_page .iprices-update-button {
+    background: rgb(29, 181, 95) !important;
+    color: #ffffff !important;
+}
+#iprices_page .iprices-clear-button {
+    background: rgb(243, 113, 113) !important;
+    color: #ffffff !important;
+}
