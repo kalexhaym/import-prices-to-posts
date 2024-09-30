@@ -18,6 +18,7 @@ global $wpdb;
 
 $updates_data = $wpdb->get_results("SELECT * FROM " . $wpdb->prefix . IPRICES_UPDATES_TABLE_NAME . " ORDER BY status DESC;");
 $current_data = $wpdb->get_results("SELECT * FROM " . $wpdb->prefix . IPRICES_PRICES_TABLE_NAME . " ORDER BY post_id;");
+$post_types = $wpdb->get_results("SELECT post_type FROM {$wpdb->posts} GROUP BY post_type;");
 
 ?>
 
@@ -107,7 +108,19 @@ $current_data = $wpdb->get_results("SELECT * FROM " . $wpdb->prefix . IPRICES_PR
     <?php } ?>
     <div class="iprices-update-buttons">
         <form method='GET' action="/wp-json/iprices/download" name='iprices_download' enctype='multipart/form-data'>
-            <input type='submit' name='but_submit_download' value='Download' class="button action iprices-update-button">
+            <table>
+                <tr>
+                    <td>
+                        <select name="post_type">
+                            <option label="All" value=""></option>
+                            <?php foreach ($post_types as $option) { ?>
+                                <option label="<?php echo $option->post_type; ?>" value="<?php echo $option->post_type; ?>"></option>
+                            <?php } ?>
+                        </select>
+                    </td>
+                    <td><input type='submit' name='but_submit_download' value='Download' class="button action iprices-update-button"></td>
+                </tr>
+            </table>
         </form>
     </div>
     <hr/>

@@ -19,14 +19,14 @@ class IPrice
 
             if ($move_file && !isset($move_file['error'])) {
                 try {
-                    new ParseFile($move_file);
+                    (new IFile())->parse($move_file);
 
                     return sprintf(
                         '<div class="notice notice-success"><p><strong>%1$s</strong>: %2$s</p></div>',
                         'Success',
                         'File uploaded'
                     );
-                } catch (\PhpOffice\PhpSpreadsheet\Reader\Exception $e) {
+                } catch (\Exception $e) {
                     return sprintf(
                         '<div class="notice notice-error"><p><strong>%1$s</strong>: %2$s</p></div>',
                         'Error',
@@ -56,9 +56,7 @@ class IPrice
     {
         global $wpdb;
 
-        $pending_status = IPRICES_STATUS_PENDING_UPDATE;
-
-        $updates = $wpdb->get_results("SELECT * FROM " . $wpdb->prefix . IPRICES_UPDATES_TABLE_NAME . " WHERE status = {$pending_status};");
+        $updates = $wpdb->get_results("SELECT * FROM " . $wpdb->prefix . IPRICES_UPDATES_TABLE_NAME . " WHERE status = " . IPRICES_STATUS_PENDING_UPDATE . ";");
 
         foreach ($updates as $update) {
             $has_post = $wpdb->get_var( "SELECT id FROM " . $wpdb->prefix . IPRICES_PRICES_TABLE_NAME . " WHERE post_id = " . $update->post_id . ";" );
@@ -105,14 +103,6 @@ class IPrice
         global $wpdb;
 
         $wpdb->query("TRUNCATE TABLE " . $wpdb->prefix . IPRICES_UPDATES_TABLE_NAME . ";");
-    }
-
-    /**
-     * @return CreateFile
-     */
-    public function download(): CreateFile
-    {
-        return new CreateFile();
     }
 
     /**
