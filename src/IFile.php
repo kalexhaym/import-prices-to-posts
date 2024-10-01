@@ -28,10 +28,12 @@ class IFile
                 {$wpdb->posts} as posts
             LEFT JOIN 
                 " . $wpdb->prefix . IPRICES_PRICES_TABLE_NAME . " as prices ON posts.ID = prices.post_id
+            WHERE
+                post_status = 'publish'
         ";
 
         if (!empty($post_type)) {
-            $sql .= " WHERE posts.post_type = '{$post_type}'";
+            $sql .= " AND posts.post_type = '{$post_type}'";
         }
 
         $sql .= "
@@ -113,7 +115,7 @@ class IFile
             }
 
             $old_price = (float) $wpdb->get_var("SELECT price FROM " . $wpdb->prefix . IPRICES_PRICES_TABLE_NAME . " WHERE post_id = " . $post_id . ";");
-            $status = empty($wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE ID = " . $post_id))
+            $status = empty($wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_status = 'publish' AND ID = " . $post_id))
                 ? IPRICES_STATUS_NOT_FOUND
                 : (
                     $old_price == $new_price

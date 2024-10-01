@@ -18,7 +18,7 @@ global $wpdb;
 
 $updates_data = $wpdb->get_results("SELECT * FROM " . $wpdb->prefix . IPRICES_UPDATES_TABLE_NAME . " ORDER BY status DESC;");
 $current_data = $wpdb->get_results("SELECT * FROM " . $wpdb->prefix . IPRICES_PRICES_TABLE_NAME . " ORDER BY post_id;");
-$post_types = $wpdb->get_results("SELECT post_type FROM {$wpdb->posts} GROUP BY post_type;");
+$post_types = $wpdb->get_results("SELECT post_type FROM {$wpdb->posts} WHERE post_status = 'publish' GROUP BY post_type;");
 
 ?>
 
