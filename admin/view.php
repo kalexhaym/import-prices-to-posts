@@ -1,6 +1,6 @@
 <?php
 
-use Kalexhaym\ImportRates\IPrice;
+use Kalexhaym\ImportPrices\IPrice;
 
 if(isset($_POST['but_submit_upload'])) {
     echo (new IPrice())->upload($_FILES);
@@ -128,7 +128,7 @@ $post_types = $wpdb->get_results("SELECT post_type FROM {$wpdb->posts} GROUP BY 
     <h2>Price Code</h2>
     <span>Paste this code into your template to get the price:</span>
     <code>
-        &lt;?php Kalexhaym\ImportRates\IPrice::getPrice(get_the_id()); ?&gt;
+        &lt;?php Kalexhaym\ImportPrices\IPrice::getPrice(get_the_id()); ?&gt;
     </code>
 
 </div>

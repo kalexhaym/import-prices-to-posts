@@ -1,6 +1,6 @@
 <?php
 
-use Kalexhaym\ImportRates\IFile;
+use Kalexhaym\ImportPrices\IFile;
 
 header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
 header('Content-Disposition: attachment; filename="prices.xls"');

@@ -1,6 +1,6 @@
 <?php
 
-namespace Kalexhaym\ImportRates;
+namespace Kalexhaym\ImportPrices;
 
 use PhpOffice\PhpSpreadsheet\Reader\Exception;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Kalexhaym\ImportRates;
+namespace Kalexhaym\ImportPrices;
 
 class IPrice
 {

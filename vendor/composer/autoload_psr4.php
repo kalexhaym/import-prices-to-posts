@@ -14,6 +14,6 @@ return array(
     'PhpOffice\\PhpSpreadsheet\\' => array($vendorDir . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet'),
     'MyCLabs\\Enum\\' => array($vendorDir . '/myclabs/php-enum/src'),
     'Matrix\\' => array($vendorDir . '/markbaker/matrix/classes/src'),
-    'Kalexhaym\\ImportRates\\' => array($baseDir . '/src'),
+    'Kalexhaym\\ImportPrices\\' => array($baseDir . '/src'),
     'Complex\\' => array($vendorDir . '/markbaker/complex/classes/src'),
 );

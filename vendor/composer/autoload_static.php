@@ -34,7 +34,7 @@ class ComposerStaticInit8413e858c8d6d3da4a9204d66302db57
         ),
         'K' => 
         array (
-            'Kalexhaym\\ImportRates\\' => 22,
+            'Kalexhaym\\ImportPrices\\' => 22,
         ),
         'C' => 
         array (
@@ -76,7 +76,7 @@ class ComposerStaticInit8413e858c8d6d3da4a9204d66302db57
         array (
             0 => __DIR__ . '/..' . '/markbaker/matrix/classes/src',
         ),
-        'Kalexhaym\\ImportRates\\' => 
+        'Kalexhaym\\ImportPrices\\' =>
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

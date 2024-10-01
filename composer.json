@@ -1,9 +1,9 @@
 {
-    "name": "kalexhaym/import-rates",
+    "name": "kalexhaym/import-prices-to-posts",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Kalexhaym\\ImportRates\\": "src/"
+            "Kalexhaym\\ImportPrices\\": "src/"
         }
     },
     "authors": [
